@@ -1,66 +1,66 @@
 # Vassals
 
-**Vassals** é um jogo 2D de plataforma desenvolvido em **C++ e SFML**. O projeto foi construído com foco na aplicação de Programação Orientada a Objetos, organização de entidades de jogo, gerenciamento de estados e implementação de sistemas próprios para controlar a execução do jogo.
+**Vassals** is a 2D platform game developed with **C++ and SFML**. The project focuses on applying Object-Oriented Programming, organizing game entities, managing game states, and implementing custom systems to control the game's execution.
 
-Um dos principais aspectos do projeto é a implementação da estrutura da engine e dos sistemas centrais do jogo em C++, utilizando a SFML como biblioteca para recursos gráficos, janela, áudio e entrada.
+One of the project's main aspects is the implementation of the game engine structure and core game systems in C++, using SFML as the library for graphics, window management, audio, and input.
 
-## 🎮 Sobre o jogo
+## 🎮 About the game
 
-O jogo possui fases de plataforma com personagens controláveis, inimigos e obstáculos com comportamentos distintos. A estrutura inclui:
+The game features platform levels with playable characters, enemies, and obstacles with distinct behaviors. Its structure includes:
 
-- Menus para navegação, seleção de jogadores e fases.
-- Estados separados para menu e execução do jogo.
-- Fases organizadas em classes próprias.
-- Personagens controláveis e sistema de inimigos.
-- Inimigos terrestres, voadores e um chefe.
-- Obstáculos como plataformas, espinhos e melecas, com comportamentos específicos.
-- Projéteis e elementos de interação com as entidades do cenário.
-- Menus de pausa, pontuação e ranking.
-- Arquivos locais utilizados para persistência de dados de jogo e pontuações.
+- Menus for navigation, player selection, and level selection.
+- Separate states for the menu and gameplay.
+- Levels organized into their own classes.
+- Playable characters and an enemy system.
+- Ground enemies, flying enemies, and a boss.
+- Obstacles such as platforms, spikes, and slime, each with specific behaviors.
+- Projectiles and interaction elements for entities in the game world.
+- Pause, score, and ranking menus.
+- Local files used to persist game data and scores.
 
-## 🧩 Organização e conceitos aplicados
+## 🧩 Architecture and applied concepts
 
-O código está separado em módulos que representam as principais responsabilidades do jogo:
+The code is divided into modules representing the game's main responsibilities:
 
-- **Entidades:** classes-base e especializações para personagens, inimigos, projéteis e obstáculos.
-- **Fases:** construção e gerenciamento das fases do jogo.
-- **Estados:** controle da transição entre menu e jogo.
-- **Gerenciadores:** gerenciamento gráfico, de colisões e de estados.
-- **Menus:** componentes e telas de navegação, pausa, jogadores, pontuação e ranking.
-- **Observer:** estrutura para comunicação de eventos de entrada entre o sujeito e os observadores.
+- **Entities:** base classes and specializations for characters, enemies, projectiles, and obstacles.
+- **Levels:** construction and management of game levels.
+- **States:** controls transitions between the menu and gameplay.
+- **Managers:** graphics, collision, and state management.
+- **Menus:** components and screens for navigation, pause, players, scores, and rankings.
+- **Observer:** structure for communicating input events between the subject and observers.
 
-Essa organização permite separar a lógica do jogo em componentes com responsabilidades específicas e facilita a manutenção e evolução do projeto.
+This organization separates the game logic into components with specific responsibilities, making the project easier to maintain and extend.
 
-## 🧰 Tecnologias
+## 🧰 Technologies
 
 - **C++11**
-- **SFML 2.x** — janela, gráficos, áudio e entrada.
+- **SFML 2.x** — window, graphics, audio, and input.
 - **CMake 3.16+**
-- Programação Orientada a Objetos
-- Padrão Observer
+- Object-Oriented Programming
+- Observer pattern
 
-## 📁 Estrutura do projeto
+## 📁 Project structure
 
 ```
 vassals-jogo/
-├── assets/       # Imagens, fontes, cenários e recursos do jogo
-├── fases-template/ # Arquivos de configuração das fases
-├── includes/     # Cabeçalhos organizados por módulo
-├── src/          # Implementações das classes
-├── salvamentos/  # Arquivos locais de pontuação e salvamento
+├── assets/       # Images, fonts, backgrounds, and game resources
+├── fases-template/ # Level configuration files
+├── includes/     # Header files organized by module
+├── src/          # Class implementations
+├── salvamentos/  # Local score and save files
 ├── main.cpp
 └── CMakeLists.txt
 ```
 
-## ▶️ Como compilar e executar
+## ▶️ How to build and run
 
-### Pré-requisitos
+### Prerequisites
 
-- CMake 3.16 ou superior.
-- Compilador C++ com suporte a C++11.
-- SFML com os módulos `system`, `window`, `graphics` e `audio`.
+- CMake 3.16 or higher.
+- A C++ compiler with C++11 support.
+- SFML with the `system`, `window`, `graphics`, and `audio` modules.
 
-Em distribuições Linux baseadas em Debian/Ubuntu, a biblioteca pode ser instalada com:
+On Debian/Ubuntu-based Linux distributions, the library can be installed with:
 
 ```bash
 sudo apt update
@@ -69,21 +69,21 @@ sudo apt install build-essential cmake libsfml-dev
 
 ### Build
 
-Na raiz do repositório:
+From the repository root:
 
 ```bash
 cmake -S . -B build
 cmake --build build
 ```
 
-O executável é configurado pelo CMake para ser gerado no diretório `bin/`. Em Linux, execute:
+CMake is configured to generate the executable in the `bin/` directory. On Linux, run:
 
 ```bash
 ./bin/jogo
 ```
 
-No Windows, o `CMakeLists.txt` espera encontrar a distribuição SFML 2.6.2 no caminho `tools/SFML-2.6.2`, conforme a configuração específica da plataforma.
+On Windows, the `CMakeLists.txt` file expects to find the SFML 2.6.2 distribution at `tools/SFML-2.6.2`, according to the platform-specific configuration.
 
 ---
 
-Projeto desenvolvido no contexto acadêmico da disciplina de Técnicas de Programação.
+Project developed as part of the academic course on Programming Techniques.
